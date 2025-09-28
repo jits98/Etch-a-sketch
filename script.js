@@ -18,7 +18,7 @@ function inputValue() {
     let num = Number(promptValue.trim());
 
     if (!isNaN(num) && num >= 1 && num <= 100) {
-      num = numberOfDivs;
+      numberOfDivs = num;
       return numberOfDivs;
     } else {
       alert("Invalid input. Please enter a number between 1 and 100");
@@ -26,11 +26,16 @@ function inputValue() {
   }
 }
 
-button.addEventListener("click", inputValue);
+button.addEventListener("click", () => {
+  const result = inputValue();
+  if (result !== null) {
+    creatingGrid();
+  }
+});
 
 const parentContainer = document.querySelector(".parent-container");
 
-function creatingRowDivs() {
+function creatingDivs() {
   const row = document.createElement("div");
   row.classList.add("row");
 
@@ -44,8 +49,9 @@ function creatingRowDivs() {
 }
 
 function creatingGrid() {
+  parentContainer.innerHTML = "";
   for (let j = 0; j < numberOfDivs; j++) {
-    creatingRowDivs();
+    creatingDivs();
   }
 }
 
