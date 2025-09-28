@@ -1,4 +1,4 @@
-### Etch a Sketch Project
+# Etch a Sketch Project
 
 This project is made as an exercise given in theodinproject foundation in javascript section.
 
